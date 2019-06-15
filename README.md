@@ -1,5 +1,5 @@
 # Microservice-Dockerflow
-Reference architecture: Focus on best dev experience of docker flow in dev phase.
+Reference architecture: Try to research best dev experience of docker flow in dev phase.
 
 - Add smart remote debug configuration to get best dev experience of  docker dev flow.
 - By using jvm built-in support of JAVA_TOOL_OPTIONS options in docker-compose.yaml, so no need to modify dockerfile to support remote debug, use the exact same dockerfile for production and local environment.
