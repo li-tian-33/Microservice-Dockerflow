@@ -2,9 +2,8 @@
 Reference architecture: Focus on docker flow for dev phase.
 
 - Add smart remote debug configuration to get best dev experience of  docker dev flow.
-- By using jvm built-in JAVA_TOOL_OPTIONS options in docker-compose.yaml, so no need to modify dockerfile to support remote debug, use the exact same dockerfile for production and local environment.
+- By using jvm built-in support of JAVA_TOOL_OPTIONS options in docker-compose.yaml, so no need to modify dockerfile to support remote debug, use the exact same dockerfile for production and local environment.
 
-dirty the
 ## Run:
 Just run docker-compose up, all demo service will be startup.
 
