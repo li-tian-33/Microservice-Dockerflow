@@ -1,0 +1,19 @@
+
+FROM busybox
+WORKDIR /app
+RUN touch /app/test.txt
+ENTRYPOINT ["sh","-c","top"]
+
+
+
+
+
+
+
+
+
+#ENV APP_FILE employee.jar
+#WORKDIR /app
+#COPY target/employee-0.0.1-SNAPSHOT.jar $APP_FILE
+#EXPOSE 9090
+#ENTRYPOINT [ "sh","-c","while ! (nc -z config-center 8088 && nc -z discovery 8061); do sleep 5; echo 'Waiting for config-server, discovery-server services to start-up...'; done;java -Dspring.profiles.active=docker -jar $APP_FILE"]

@@ -1,0 +1,54 @@
+
+version: "3"
+services:
+  api-gateway:
+    build:
+      context: ./apigateway
+    ports:
+      - 8060:8060
+    depends_on:
+      - config-center
+
+  config-center:
+    build:
+      context: ./config
+    ports:
+      - 8088:8088
+
+  discovery:
+    build:
+      context: ./discovery
+#    environment:
+#        - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005
+    ports:
+      - 8061:8061
+    depends_on:
+      - config-center
+
+  employee-service:
+    build:
+      context: ./employee
+    environment:
+      - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006
+    ports:
+      - 9090:9090
+      - 5006:5006
+    depends_on:
+      - config-center
+
+#  employee-service-package:
+#    image: maven:3.6-jdk-8
+#    working_dir: /usr/src/employee
+#    command: "mvn  package -Dmaven.test.skip=true"
+#    volumes:
+#      - $PWD:/usr/src
+#      - $HOME/.m2:/root/.m2
+
+#  employee-service-package1:
+#    image: busybox
+#    working_dir: /usr/src/employee
+#    command: "sh -c top"
+#    volumes:
+#      - $PWD:/usr/src
+#      - $HOME/.m2:/root/.m2
+##      - $PWD/employee/target:/usr/src/employee/target

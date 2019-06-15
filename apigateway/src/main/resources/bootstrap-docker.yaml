@@ -1,0 +1,5 @@
+
+spring:
+  cloud:
+    config:
+      uri: http://config-center:8088
