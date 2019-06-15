@@ -1,6 +1,6 @@
 # Microservice-Dockerflow
 Reference architecture: Try to research best dev experience of docker flow in dev phase. 
-Get all benefit docker bring, avoid the disadvantage of debug container instance.  
+Get all benefits docker brings, avoid the disadvantage of debug container instance.  
 
 - Add smart remote debug configuration to seamless debug in docker container, just like debug normal java process.
 - By using jvm built-in support of JAVA_TOOL_OPTIONS options in docker-compose.yaml, so no need to modify dockerfile to support remote debug, use the exact same dockerfile for both production and local environment.
@@ -37,5 +37,5 @@ By using remote debug configuration, the debug process will automatically run mv
   3. Update remote debug port to match the exposed port in docker-compose.yaml.
 
 ## Notes:
-Because of the time factor, **Department**,**Organization** services are not add docker or docker-compose support.
+Because of the time factor, **Department**,**Organization** services are not added docker or docker-compose support.
 
